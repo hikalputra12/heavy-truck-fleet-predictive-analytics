@@ -12,6 +12,7 @@ env/
 data/raw/*.csv
 *.db
 *.sqlite3
+~$*
 
 #Pengaturan Editor / IDE
 .vscode/

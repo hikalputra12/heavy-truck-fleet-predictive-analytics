@@ -47,15 +47,15 @@ class TelemetryPreprocessor:
         self.scaler = RobustScaler()
 
     def fit_transform(self, X):
-        # 1. Hapus kolom yang memiliki terlalu banyak missing values
+        # Hapus kolom yang memiliki terlalu banyak missing values
         missing_ratio = X.isna().mean()
         self.selected_features = missing_ratio[missing_ratio <= self.missing_threshold].index.tolist()
         X_filtered = X[self.selected_features]
 
-        # 2. Imputasi nilai kosong dengan median
+        # Imputasi nilai kosong dengan median
         X_imp = self.imputer.fit_transform(X_filtered)
 
-        # 3. Penskalaan dengan RobustScaler (IQR) agar kebal terhadap lonjakan sensor ekstrem
+        # Penskalaan dengan RobustScaler (IQR) agar kebal terhadap lonjakan sensor ekstrem
         X_scaled = self.scaler.fit_transform(X_imp)
         return X_scaled
 
