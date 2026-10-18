@@ -1,0 +1,21 @@
+#Python Cache & Kompilasi
+__pycache__/
+*.py[cod]
+
+#Virtual Environment (Lingkungan Python Lokal)
+.venv/
+venv/
+env/
+
+#File Database & Data Mentah
+# (Database SQLite dan file CSV mentah berukuran besar tidak boleh masuk Git)
+data/raw/*.csv
+*.db
+*.sqlite3
+
+#Pengaturan Editor / IDE
+.vscode/
+.idea/
+
+#Checkpoint Jupyter Notebook
+.ipynb_checkpoints/
